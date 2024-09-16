@@ -1,8 +1,48 @@
-# React + Vite
+# Component Mitra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Component Mitra is an e-commerce web application that allows users to browse and purchase products. The platform is built with React.js and provides features like adding products to the cart, removing them, and managing the cart items effectively. This project uses Context API for state management and includes features like local storage persistence and toast notifications for user interactions.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+
+
+## Features
+
+- Browse products and view details.
+- Add products to the cart and manage cart items.
+- Remove individual items or clear the entire cart.
+- Toast notifications for adding/removing items.
+- Persistence of cart data using local storage.
+- Responsive design for various screen sizes.
+
+## Installation
+
+To get started with Component Mitra, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/component-mitra.git
+   cd component-mitra
+
+## Project Structure
+```bash
+component-mitra/
+│
+├── public/                  # Public files
+├── src/
+│   ├── assets/              # Assets like images and data
+│   ├── components/          # Reusable components
+│   ├── context/             # Context API for state management
+│   ├── pages/               # Different pages of the application
+│   ├── App.js               # Main application component
+│   └── index.js             # Entry point of the application
+│
+├── .gitignore
+├── package.json
+├── README.md                # Project documentation
+└── ...
+```
