@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    /* background: #000000;
+    color: #ffffff; */
+    overflow-x: hidden;
+}
+/* :root{
+    --primary-color: #FFC300;
+     --primary-color: #3D33DD;
+    --secondary-color: #FF7F00;
+} */
+:root{
+    --primary-color: #a353fd;
+    /* /* --secondary-color: #FF7F50;  */
+    --secondary-color: #8e2ffa;
+}
+/* :root{
+    --primary-color: #FFC300;
+    --secondary-color: #FF7F50;
+} */
+/* :root{
+    
+    --primary-color: #F5004F;
+    --primary-color: #FF7F50;
+    
+    --secondary-color: #F51400;
+    /* --secondary-color: #FF5F4F; 
+    --pinkish-color: #FF4F81;
+    --yellowish-color: #FFBA4F;
+    --darkyellowish-color: #FF9D4F;
+} */
+
+/* Custom Scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
