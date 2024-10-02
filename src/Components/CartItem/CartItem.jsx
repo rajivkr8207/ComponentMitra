@@ -55,7 +55,7 @@ const CartItem = () => {
                   return (
                     <div
                       key={item.id}
-                      className="flex  flex-row max-w-3xl mx-auto pr-3  rounded-lg mb-4 bg-[#ffffff] shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105"
+                      className="flex  flex-row max-w-3xl mx-auto pr-3  rounded-lg mb-4 bg-[#ffffff] shadow-md hover:shadow-2xl transition duration-300 transform hover:scale-105"
                     >
                       <div className="w-full lg:w-1/2 lg:px-4 flex justify-center items-center">
                         <Link to={`/product/${item.id}`}>

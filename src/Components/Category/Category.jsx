@@ -84,7 +84,7 @@ const Category = () => {
               }}
             >
               <div className="px-2 py-3 h-[15rem]">
-                <div className="w-[8rem] h-[12rem] py-5 grid place-content-center  bg-gradient-to-b from-[#ffeb91] to-[rgba(255,255,255,1)]  border-4 border-[#ffde4c] rounded-lg hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
+                <div className="w-[10rem] h-[13rem] py-5 grid place-content-center  bg-gradient-to-b from-[#ffeb91] to-[rgba(255,255,255,1)]  border-4 border-[#ffde4c] rounded-lg hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105">
                   <div className="mx-auto flex flex-col items-center gap-1">
                     <img
                       src={item.image}

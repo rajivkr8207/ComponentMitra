@@ -14,6 +14,7 @@ const FilterCategory = ({ filter, setFilter }) => {
     selectedSubcategory,
     setSelectedBrand,
     selectedBrand,
+    setSearchQuery,
     sortOrder,
     handleSort,
   } = useContext(ShopContext);
@@ -46,6 +47,7 @@ const FilterCategory = ({ filter, setFilter }) => {
               onChange={(e) => {
                 setSelectedCategory(e.target.value);
                 setSelectedSubcategory("All");
+                setSearchQuery("");
               }}
               value={selectedCategory}
               className="w-full scrollbar-thin p-2 border border-gray-300 rounded-md focus:outline-none"
@@ -65,7 +67,10 @@ const FilterCategory = ({ filter, setFilter }) => {
               Subcategory
             </label>
             <select
-              onChange={(e) => setSelectedSubcategory(e.target.value)}
+              onChange={(e) => {
+                setSelectedSubcategory(e.target.value);
+                setSearchQuery("");
+              }}
               value={selectedSubcategory}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
             >

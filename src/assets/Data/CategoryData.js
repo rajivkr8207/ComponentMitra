@@ -31,7 +31,7 @@ let categorydata = [
   {
     id: 1,
     name: "component board",
-    image: Rectangle1,
+    image: a,
     description:
       "This is where you can find the right motherboard for your project. Browse through top brands and beginner-friendly options to expert-level development boards. Each product page provides detailed information and datasheets from the manufacturer. Pick the perfect board for your project and share your ideas with the community.",
     subcategory: [
@@ -100,7 +100,7 @@ let categorydata = [
   {
     id: 2,
     name: "modules",
-    image: Rectangle2,
+    image: b,
     subcategory: [
       {
         id: "101",

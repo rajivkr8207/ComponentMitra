@@ -6,7 +6,8 @@ import Stay_Connect from "../Stay_Connect/Stay_Connect";
 const Footer = () => {
   return (
     <>
-      {/* <Stay_Connect /> */}
+      <Stay_Connect />
+
       <div className="w-full py-10 flex flex-wrap justify-around bg-black text-white">
         <div className="flex flex-col gap-4 w-full md:w-1/3 mb-6 md:mb-0 px-4">
           <div className="flex gap-3 items-center">

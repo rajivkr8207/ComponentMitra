@@ -94,7 +94,7 @@ const RelatedProduct = (props) => {
       </button>
     </div>
     </div> */}
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2">
           {allProduct.map((item, i) => {
             if (product.category === item.category) {
               return (

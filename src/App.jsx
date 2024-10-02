@@ -40,7 +40,7 @@ const App = () => {
             <Route path="myaccount" element={<Myacount />} />
             <Route path="mywishlist" element={<Mywishlist />} />
             <Route path="myaddress" element={<Myaddress />} />
-            <Route path="myorder" element={<ShopCategory />} />
+            <Route path="myorder" element={<MyOrder />} />
           </Route>
 
           {/* Dynamic Category and Subcategory Routing */}

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { FaSearch, FaHome } from "react-icons/fa";
 import { BsCart4 } from "react-icons/bs";
 import { IoPersonSharp, IoCloseSharp } from "react-icons/io5";
@@ -9,6 +9,7 @@ import { Tooltip } from "react-tooltip";
 import logo from "../../assets/logo.png";
 import { FaBoxOpen } from "react-icons/fa6";
 import { ShopContext } from "../../Context/ShopContext";
+
 const Headers = () => {
   const {
     getTotalcartItem,
@@ -16,10 +17,14 @@ const Headers = () => {
     setSearchQuery,
     setSelectedCategory,
     setSelectedSubcategory,
+    searchSuggestions,
   } = useContext(ShopContext);
 
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const suggestionBoxRef = useRef(null); // Ref for suggestion box
   const navigate = useNavigate();
+
   const handleclick = () => {
     setSelectedCategory("All");
     setSelectedSubcategory("All");
@@ -27,13 +32,34 @@ const Headers = () => {
       navigate("/allproduct");
     }
   };
+
+  const handleInputChange = (e) => {
+    setSearchQuery(e.target.value);
+    setShowSuggestions(true);
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    setSearchQuery(suggestion);
+    setShowSuggestions(false); // Hide suggestions after clicking
+    handleclick(); // Trigger search after selecting suggestion
+  };
+
+  const handleBlur = (e) => {
+    if (
+      suggestionBoxRef.current &&
+      !suggestionBoxRef.current.contains(e.relatedTarget)
+    ) {
+      setTimeout(() => setShowSuggestions(false), 200);
+    }
+  };
+
   return (
     <header className="bg-white shadow-lg">
       <div className="lg:container lg:mx-auto flex justify-between items-center py-4 lg:px-0 px-1">
         {/* Logo and Brand Name */}
         <div className="flex items-center space-x-3">
           <img src={logo} alt="Logo" className="h-12" />
-          <div className=" flex flex-col">
+          <div className="flex flex-col">
             <h1 className="text-2xl font-normal underline">Component Mitra</h1>
             <h1 className="text-sm font-semibold mt-[-0.4rem]">
               Your Innovation, Our Parts
@@ -42,12 +68,15 @@ const Headers = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="flex-1 hidden lg:flex justify-center">
+        <div className="flex-1 relative hidden lg:flex justify-center">
           <div className="flex items-center border border-gray-300 rounded-full overflow-hidden w-full max-w-md shadow-sm">
             <input
               type="text"
               placeholder="Search for products..."
-              onChange={(e) => setSearchQuery(e.target.value)}
+              value={searchQuery}
+              onChange={handleInputChange}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={handleBlur} // Use handleBlur to check if click is within the suggestion box
               className="w-full bg-transparent border-none outline-none px-4 py-2 text-gray-700 text-lg placeholder-gray-500"
             />
             <button
@@ -57,6 +86,23 @@ const Headers = () => {
               <FaSearch />
             </button>
           </div>
+
+          {showSuggestions && searchSuggestions.length > 0 && (
+            <ul
+              ref={suggestionBoxRef}
+              className="absolute z-10 w-full max-w-md mt-1 top-12 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-hidden"
+            >
+              {searchSuggestions.map((suggestion, index) => (
+                <li
+                  key={index}
+                  onClick={() => handleSuggestionClick(suggestion.name)}
+                  className="px-4 py-2 cursor-pointer bg-white"
+                >
+                  <span className="font-semibold">{suggestion.name}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
         {/* Cart and Login/Sign In */}
@@ -105,7 +151,6 @@ const Headers = () => {
                 Login/SignUp
               </button>
             </Link>
-            {/* <Tooltip id="loginTooltip" content="Login/SignUp" place="bottom" /> */}
           </div>
         </div>
 

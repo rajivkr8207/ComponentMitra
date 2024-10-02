@@ -2,26 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-body{
-    /* background: #000000;
+body {
+  /* background: #000000;
     color: #ffffff; */
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 /* :root{
     --primary-color: #FFC300;
      --primary-color: #3D33DD;
     --secondary-color: #FF7F00;
 } */
-:root{
-    --primary-color: #a353fd;
-    /* /* --secondary-color: #FF7F50;  */
-    --secondary-color: #8e2ffa;
+:root {
+  --primary-color: #a353fd;
+  /* /* --secondary-color: #FF7F50;  */
+  --secondary-color: #8e2ffa;
 }
 /* :root{
     --primary-color: #FFC300;
@@ -41,14 +41,14 @@ body{
 
 /* Custom Scrollbar */
 .scrollbar-thin::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-    border-radius: 10px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }

@@ -6,6 +6,7 @@ Component Mitra is an e-commerce web application that allows users to browse and
 
 - firstly add on Sep 16, 2024
 - updated is add category, filter and searching on sep 27, 2024
+- some fix a code on oct 2, 2024
 
 ## Table of Contents
 

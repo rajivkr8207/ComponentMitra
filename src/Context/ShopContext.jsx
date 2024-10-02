@@ -29,6 +29,7 @@ const ShopContextProvider = (props) => {
   const [selectedBrand, setSelectedBrand] = useState("All");
   const [sortOrder, setSortOrder] = useState("");
   const [searchQuery, setSearchQuery] = useState(""); // New search query state
+  const [searchSuggestions, setSearchSuggestions] = useState([]);
 
   const allProducts = allProduct;
 
@@ -54,6 +55,31 @@ const ShopContextProvider = (props) => {
       }
       return 0;
     });
+  // Generate search suggestions based on search query
+  useEffect(() => {
+    if (searchQuery) {
+      const suggestions = allProducts
+        .filter((product) => {
+          return product.name.toLowerCase().includes(searchQuery.toLowerCase());
+          // ||
+          // product.category
+          //   .toLowerCase()
+          //   .includes(searchQuery.toLowerCase()) ||
+          // product.subcategory
+          //   .toLowerCase()
+          //   .includes(searchQuery.toLowerCase())
+        })
+        .map((product) => ({
+          name: product.name,
+          // category: product.category,
+          // subcategory: product.subcategory,
+        }));
+
+      setSearchSuggestions(suggestions);
+    } else {
+      setSearchSuggestions([]); // Clear suggestions when search query is empty
+    }
+  }, [searchQuery]);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartitems));
@@ -61,7 +87,7 @@ const ShopContextProvider = (props) => {
 
   const addToCart = (itemID) => {
     setCartitems((prev) => {
-      if (prev[itemID] >= 5) {
+      if (prev[itemID] >= 1000000000000000) {
         toast.warn("Cannot add more than 5 items!", {
           position: "bottom-left",
           autoClose: 1000,
@@ -73,6 +99,18 @@ const ShopContextProvider = (props) => {
           theme: "light",
           transition: Bounce,
         });
+
+        // toast.success("Add items successfully!", {
+        //   position: "bottom-left",
+        //   autoClose: 1000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   theme: "light",
+        //   transition: Bounce,
+        // });
         return prev;
       } else {
         return { ...prev, [itemID]: prev[itemID] + 1 };
@@ -156,6 +194,7 @@ const ShopContextProvider = (props) => {
     handleSort: setSortOrder, // Update sort order
     searchQuery,
     setSearchQuery, // Update search query
+    searchSuggestions, // Provide search suggestions
   };
 
   return (

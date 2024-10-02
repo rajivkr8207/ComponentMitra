@@ -24,9 +24,11 @@ const Item = (props) => {
   };
 
   return (
+    // bg-gradient-to-b from-[#FFEB92] to-[#ffffff]
+    // border-[#ffde4c]
     <div
       key={props.i}
-      className="lg:w-[15rem] lg:h-[20rem] h-[17rem] bg-gradient-to-b from-[#FFC300] to-[#ffffff] border-4 border-[#ffde4c] md:w-[13rem] w-[9.5rem] mx-auto rounded-sm overflow-hidden shadow-lg m-4 transition-transform transform lg:hover:scale-105"
+      className="lg:w-[15rem] lg:h-[20rem] h-[17rem]    md:w-[13rem] w-[9.5rem] mx-auto rounded-sm overflow-hidden hover:shadow-2xl m-4 transition-transform transform lg:hover:scale-105"
     >
       <Link to={`/product/${props.id}`}>
         <div className="relative w-full lg:h-44 h-32">
@@ -35,7 +37,7 @@ const Item = (props) => {
             src={props.image}
             alt="Product"
           />
-          <div className="absolute top-0 left-0 bg-gradient-to-b from-[#FFC300] to-[#fae292] bg-opacity-60 text-gray-800 lg:text-xs text-[0.7rem] px-2 py-1 rounded-br-lg font-semibold">
+          <div className="absolute top-0 left-0 bg-gradient-to-b from-[#FFC300] to-[#fae292] bg-opacity-60 text-black lg:text-xs text-[0.7rem] px-2 py-1 rounded-br-lg font-semibold">
             New Arrival
           </div>
           {/* Heart Button */}
@@ -48,8 +50,10 @@ const Item = (props) => {
             {props.name}
           </div>
           <p className="text-gray-700 text-base flex gap-4 items-center">
-            <span className="font-semibold text-black">₹{props.new_price}</span>
-            <span className="line-through text-red-500">
+            <span className="font-semibold text-[--secondary-color]">
+              ₹{props.new_price}
+            </span>
+            <span className="line-through text-gray-500">
               ₹{props.old_price}
             </span>
           </p>

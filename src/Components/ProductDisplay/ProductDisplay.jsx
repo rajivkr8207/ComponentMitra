@@ -35,9 +35,6 @@ const ProductDisplay = (props) => {
   };
 
   const handleGoToCart = () => {
-    // Navigate to cart page
-    navigate("/cart");
-    // Scroll to top
     window.scrollTo(0, 0);
   };
   return (
@@ -131,7 +128,8 @@ const ProductDisplay = (props) => {
         <div className="flex justify-start items-center gap-5 mb-4">
           {isInCart ? (
             <Link
-              onClick={handleGoToCart()}
+              to="/cart"
+              onClick={handleGoToCart}
               className="bg-[--primary-color] text-white py-3 px-6 rounded-md hover:bg-[--secondary-color]"
             >
               Go to Cart

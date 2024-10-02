@@ -66,7 +66,7 @@ scrollbar-thin py-3 px-4 bg-white shadow-md rounded-md border border-gray-200 ov
                   }}
                 >
                   <div className="px-2 py-3 lg:w-[9rem] w-[10rem] h-[15rem] mx-auto ">
-                    <div className="w-full h-[12rem] py-5 mx-auto grid place-content-center bg-gradient-to-b from-[#ffeb91] to-[rgba(255,255,255,1)] border-4 border-[#ffde4c] rounded-lg hover:shadow-2xl transition duration-300 ease-in-out transform group-hover:scale-105">
+                    <div className="w-full h-[12rem] py-5 mx-auto grid place-content-center bg-gradient-to-b from-[#FDF1C3] to-[rgba(255,255,255,1)] border-4 border-[#ffde4c] rounded-lg hover:shadow-2xl transition duration-300 ease-in-out transform group-hover:scale-105">
                       <div className="flex flex-col items-center gap-1">
                         <img
                           src={item.photo}
